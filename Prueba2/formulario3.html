@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 2 - Validacion de Formularios</title>
+</head>
+<style>
+    body {
+       background-color: rgb(101, 189, 201);
+   }
+
+   form {
+       width: 80%;
+       margin: auto;
+   }
+
+   fieldset {
+       display: flex;
+       justify-content: space-around;
+       min-width: 60vh;
+       background-color: rgba(174, 213, 216, 0.8);
+       border-radius: 15px;
+       box-shadow: 5px 5px 15px lightgrey;
+       margin: 1rem auto;
+       min-height: 3rem;
+
+   }
+
+   legend {
+       min-width: 7rem;
+       text-align: center;
+   }
+
+   .titulosFieldset {
+       background-color: rgba(240, 240, 240, 0.5);
+       font-size: 0.6rem;
+       border-radius: 20px;
+       box-shadow: -5px 5px 10px black;
+       min-height: 1rem;
+       padding-top: 0.3rem;
+   }
+
+   input {
+       border-radius: 5px;
+   }
+
+   input:valid {
+       box-shadow: -5px 5px 20px blue;
+   }
+   input:invalid {
+       box-shadow: -5px 5px 20px red;
+   }
+</style>
+<body>
+    <form method="get" name="form3">
+        <fieldset id="grupo3">
+            <legend class="titulosFieldset">DATOS DEL USUARIO</legend>
+            <label for="txtCalle" class="etiquetasInput">CALLE: </label>
+            <input type="text" name="calle" id="txCalle" minlength="8" maxlength="30" required>
+            <label for="txtNumero" class="etiquetasInput">NUMERO: </label>
+            <input type="number" name="numero" id="txtNumero" min="1" required>
+            <label for="txtPuerta" class="etiquetasInput">PUERTA: </label>
+            <input type="text" name="Puerta" id="txtPuerta" required>
+            <label for="codigo">CODIGO: </label>
+            <input type="text" name="codigo" id="txtCodigo" minlength="4" maxlength="4" required>
+            <label for="provincia">PROVINCIA: </label>
+            <input type="text" name="provincia" id="txtProvincia" minlength="4" maxlength="20" required >  
+        </fieldset>
+        <fieldset id="control">
+            <legend class="titulosFieldset">CONTROLES</legend>
+            <input type="submit" value="ENVIAR" id="enviar">
+        </fieldset>
+    </form>
+
+    <script>
+         // DESACTIVAMOS LOS REGISTROS QUE NO QUEREMOS QUE SEAN ACCEDIDOS DE MOMENTO
+         document.querySelector('#control').disabled = true;
+    </script>
+    
+</body>
+</html>

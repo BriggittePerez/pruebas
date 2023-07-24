@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+   
+}
+
+header {
+    width: 99vw;
+    height: 25vh;
+    background-color: rgb(106, 123, 155);
+}
+
+main {
+    width: 99vw;
+  
+
+
+}
+
+footer {
+    width: 99vw;
+    height: 35vh;
+    background-color: rgb(106, 123, 155);
+}
+
+.menuNavegacion {
+    margin: 0;
+    width: 99vw;
+    height: 3vh;
+    background-color: rgb(84, 110, 158);
+}
+
+h1 {
+
+    color: white;
+    letter-spacing: 2rem;
+    font-size: 3rem;
+    text-shadow: 10px 5px 5px rgb(66, 103, 167);
+    font-weight: bold;
+}
+
+h2 {
+    color: rgb(84, 110, 158);
+    text-align: center;
+}
+
+.verMas {
+    color: rgb(108, 160, 149);
+    text-align: center;
+
+}
+
+.cabecera {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.listaNavegador{
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.listaNavegador{
+    text-decoration: none;
+    list-style: none;
+    
+}
+.enlacesNav{
+    color:  rgb(108, 160, 149);
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 23px;
+}
+
+.primeraSeccion {
+    display: flex;
+    width: 60vw;
+    margin: auto;
+    border: 2px solid rgb(84, 110, 158);
+    padding: 15px;
+    border-radius: 15px;
+    margin-top: 25px;
+
+}
+
+.contenidoPrimeraSeccion {
+    width: 50%;
+}
+.menuFooter{
+    height: 335px;
+    display: flex;
+    justify-content: space-around;  
+    align-items: center;
+}
+.listaFooter{
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+}
+.sobreNostros{
+    color:  white;
+    text-decoration: none;
+    
+}
+
+.ladingPage{
+    text-align: center;
+
+}

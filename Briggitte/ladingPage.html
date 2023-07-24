@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es"> <!--Representa la raíz de un documento-->
+   
+<head>
+    <!-- DEFINE LA INFORMACION DE LOS DATOS DEL DOCUMENTO--> <!---->
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lading Page</title> <!-- título del documento-->
+    <link rel="stylesheet" href="css/ladingPage.css"><!--vincula a hojas de estilo externas-->
+
+    
+</head>
+
+<body><!--cuerpo del documento-->
+
+
+    <header class="cabecera"><!--Contenedor de contenido introductorio o un conjunto de enlaces de navegación-->
+
+        <img src="img/iconoMovil.jpg" alt=""><!--incrustar una imagen en una página-->
+
+
+        <h1>Movil Center</h1><!--encabezado más importante-->
+
+
+    </header>
+    <nav class="menuNavegacion"><!--conjunto de enlaces de navegación-->
+
+        <ul class="listaNavegador"><!--define una lista desordenada-->
+            <li><a class="ListaNav" href="ofertas.html">OFERTAS</a></li><!-- li define un elemento de la lista-->
+            <li><a class="ListaNav" href="servicios.html">SERVICIOS</a></li><!-- <a>  hipervinculo para enlazar de una página a otra-->
+            <li><a class="ListaNav" href="sobreNosotros.html">SOBRE NOSOTROS</a></li>
+            <li><a class="ListaNav" href="reparaciones.html">REPARACIONES</a></li>
+            <li><a class="ListaNav" href="suscribete.html">SUSCRIBETE</a></li>
+        </ul>
+    </nav>
+    <main><!--especifica el contenido principal de un documento-->
+        <section class="primeraSeccion"><!--class buscan un elemento basado en el contenido de su atributo--><!--sección en un documento-->
+            <h1 id="ofertas"> OFERTAS EN IPHONE</h1><!-- div división o una sección en un documento-->
+            <div class="contenidoPrimeraSeccion">
+                <img src="img/imagenGrande.png" alt="">
+            </div>
+            <div class="contenidoPrimeraSeccion">
+                <h2>iPhone reacondicionados y baratos!! Aprovecha esta oportunidad!!!</h2><!--subtítulos-->
+                <p>&iquest;Buscas un iPhone barato? &iexcl;Bingo! Somos los maestros en ofertas de iPhone
+                    reacondicionados. Nuestros iPhones reacondicionados ofrecen lo mejor de ambos mundos: precio y
+                    calidad. iPhone 12, iPhone 11, iPhone XR, iPhone XS Max los tenemos todos
+                    &iquest;Por qu&eacute; comprarte un iPhone reacondicionado?
+                    Cada a&ntilde;o, la c&eacute;lebre marca saca sus nuevos modelos y los precios de los iPhone se disparan. Por eso, para poder disfrutar del tel&eacute;fono de tus sue&ntilde;os sin comprometer tu presupuesto, hazte con un iPhone reacondicionado en Back Market. No importa si buscas uno de los &uacute;ltimos smartphones o un modelo de m&oacute;viles baratos recientes, todos los iPhone reacondicionados han sido cuidadosamente probados, reparados y renovados. Todos los dispositivos pasan por numerosos tests en laboratorios con diversos puntos de control, con el fin de proteger al usuario de posibles aver&iacute;as. Adem&aacute;s, tu iPhone reacondicionado cuenta con una garant&iacute;a de 2 a&ntilde;os.</p>
+                <form action="" method="post"> <!--crear un formulario bpara la entrada del usuario-->
+                    <ul class="listaForm">
+                        <li>
+                            <label for="name">Nombre:</label><!--etiqueta para varios elementos-->
+                            <input type="text" id="name" name="user_name"><!--campo de entrada donde se puede ingresar datos-->
+                        </li>
+                        <li>
+                            <label for="mail">Correo electrónico:</label>
+                            <input type="email" id="mail" name="user_mail">
+                        </li>
+                        <li>
+                            <label for="msg">Mensaje:</label>
+                            <textarea id="msg" name="user_message"></textarea><!--control de entrada de texto de varias líneas-->
+                        </li>
+                    </ul>
+                    <input type="submit">
+                </form>
+                <p><a id="inicio" href="index.html"><h2>Ir a Inicio</h2></p>
+            </div>
+        </section>
+
+
+
+
+
+    </main>
+    <footer><!--pie de página-->
+        <div class="menuFooter">
+            <div>
+                <nav>
+                    <ul class="listaFooter">
+                        <li><a class="sobreNostros" href="inicio.html">INICIO </a></li>
+                        <li><a class="sobreNostros" href="ofertas.html">OFERTAS</a></li>
+                        <li><a class="sobreNostros" href="blog.html">BLOG</a></li>
+                        <li><a class="sobreNostros" href="hazteSocio.html">HAZTE SOCIO</a></li>
+                        <li><a class="sobreNostros" href="contacto.html">CONTACTO</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div>
+        
+
+                    <ul class="listaFooter">
+                        <li class="sobreNostros">BRIGGITTE PEREZ</li>
+                        <li><a class="sobreNostros" href="suscribete.html">CONTACTO</a></li>
+                        <li><a class="sobreNostros" href="suscribete.html">BRIGGITTEGROUP@GMAIL.COM</a></li>
+                        <li class="sobreNostros"></li>
+                    </ul>
+            
+            </div>
+
+            <div>
+                <a href="https://twitter.com/?lang=es"><img id="twi" src="img/Twitter.png" alt=""></a><!--id  identificador único-->
+                
+            </div>
+            <div>
+                <a href="https://es-es.facebook.com/"><img id="twi" src="img/facebook.png" alt=""></a>
+                
+            </div>
+            <div>
+                <a href="https://www.instagram.com/"><img id="twi" src="img/insta.png"  alt=""></a>
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>

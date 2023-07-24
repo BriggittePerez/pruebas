@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 2 - Validacion de Formularios</title>
+    <style>
+         body {
+            background-color: rgb(101, 189, 201);
+        }
+
+        form {
+            width: 60%;
+            margin: auto;
+        }
+
+        fieldset {
+            display: flex;
+            justify-content: space-around;
+            min-width: 60vh;
+            background-color: rgba(174, 213, 216, 0.8);
+            border-radius: 15px;
+            box-shadow: 5px 5px 15px lightgrey;
+            margin: 1rem auto;
+            min-height: 3rem;
+
+        }
+
+        legend {
+            min-width: 7rem;
+            text-align: center;
+        }
+
+        .titulosFieldset {
+            background-color: rgba(240, 240, 240, 0.5);
+            font-size: 0.6rem;
+            border-radius: 20px;
+            box-shadow: -5px 5px 10px black;
+            min-height: 1rem;
+            padding-top: 0.3rem;
+        }
+
+         input {
+            border-radius: 5px;
+        }
+
+        input:valid {
+            box-shadow: -5px 5px 20px blue;
+        }
+        input:invalid {
+            box-shadow: -5px 5px 20px red;
+        }
+    </style>
+</head>
+<body>
+    <form method="get" name="form1">
+        <fieldset id="grupo1">
+            <legend class="titulosFieldset">DATOS LOGIN</legend>
+            <label for="txtMail" class="etiquetasInput">CORREO: </label>
+            <input type="text" name="mail" id="txtMail" required>  
+            <label for="txtPass" class="etiquetasInput">CLAVE: </label>
+            <input type="text" name="pass" id="txtPass" required>
+        </fieldset>
+        <fieldset id="control">
+                <legend class="titulosFieldset">CONTROLES</legend>
+                
+                    <button id=""><a href="formulario3.html">SIGUIENTE</a></button>
+                   
+        </fieldset>
+            
+    </form>
+
+    <script>
+
+        // DESACTIVAMOS LOS REGISTROS QUE NO QUEREMOS QUE SEAN ACCEDIDOS DE MOMENTO
+        document.querySelector('#control').disabled = true;
+
+        // ASIGNAMOS UN EVENTO PARA QUE EJECUTE UNA FUNCION CUANDO OCURRA
+        document.querySelector('#txtMail').addEventListener('blur', valMail);
+        document.querySelector('#txtPass').addEventListener('blur', valPass);
+        document.querySelector('#enviar').addEventListener('click');
+
+         // FUNCIONES DE VALIDACION
+
+        function valMail() {
+            let userMail = document.querySelector('#txtMail').value;
+            // eRmail = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
+            let eRmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
+            if (eRmail.test(userMail) == true) {
+                document.querySelector('#txtMail').disabled = true;
+                arrayDatos[1] = userMail;
+            }
+            else {
+                alert('INVALIDO');
+            }
+        }
+
+        function valPass() {
+            userPass1 = document.querySelector('#txtPass').value;
+            eRpass1 = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&])([A-Za-z\d$@$!%*?&]|[^ ]){8,15}$/;
+            while (userPass1 != ''){
+                if (eRpass1.test(userPass1) == true) {
+                    document.querySelector('#txtPass').disabled = true;
+                    document.querySelector('#control').disabled = false;
+                    return;
+                }
+                else {
+                    document.querySelector('#txtPass').disabled = false;
+                    alert('INVALIDO');
+                    return;
+                }
+            }
+        }
+
+
+    </script>
+    
+</body>
+</html>

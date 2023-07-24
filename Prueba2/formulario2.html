@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba 2 - Validacion de Formularios</title>
+</head>
+<style>
+    body {
+        background-color: rgb(101, 189, 201);
+   }
+
+   form {
+       width: 60%;
+       margin: auto;
+   }
+
+   fieldset {
+       display: flex;
+       justify-content: space-around;
+       min-width: 60vh;
+       background-color: rgba(174, 213, 216, 0.8);
+       border-radius: 15px;
+       box-shadow: 5px 5px 15px lightgrey;
+       margin: 1rem auto;
+       min-height: 3rem;
+
+   }
+
+   legend {
+       min-width: 7rem;
+       text-align: center;
+   }
+
+   .titulosFieldset {
+       background-color: rgba(240, 240, 240, 0.5);
+       font-size: 0.6rem;
+       border-radius: 20px;
+       box-shadow: -5px 5px 10px black;
+       min-height: 1rem;
+       padding-top: 0.3rem;
+   }
+
+   input {
+       border-radius: 5px;
+   }
+
+   input:valid {
+       box-shadow: -5px 5px 20px blue;
+   }
+   input:invalid {
+       box-shadow: -5px 5px 20px red;
+   }
+</style>
+<body>
+    <form method="get" name="form2">
+        <fieldset id="grupo2">
+            <legend class="titulosFieldset">DATOS PERSONALES</legend>
+            <label for="txtName" class="etiquetasInput">NOMBRE: </label>
+            <input type="text" name="name" id="txtName" required>
+            <label for="txtApell" class="etiquetasInput">APELLIDOS: </label>
+            <input type="text" name="apell" id="txtApell" required>
+            <label for="txtTel" class="etiquetasInput">TELEFONO: </label>
+            <input type="text" name="Tel" id="txtTel" required>
+            <label for="edad">EDAD: </label>
+            <input type="number" name="numEdad" id="edad" min="18" max="65" step="1" required>
+            
+        </fieldset>
+        <fieldset id="control">
+            <legend class="titulosFieldset">CONTROLES</legend>
+            <a href="formulario3.html">
+                <button>SIGUIENTE</button>
+              </a> 
+        </fieldset>
+    </form>
+    <script>
+
+         // DESACTIVAMOS LOS REGISTROS QUE NO QUEREMOS QUE SEAN ACCEDIDOS DE MOMENTO
+         document.querySelector('#control').disabled = true;
+
+        // ASIGNAMOS UN EVENTO PARA QUE EJECUTE UNA FUNCION CUANDO OCURRA
+        document.querySelector('#txtName').addEventListener('blur', valName);
+        document.querySelector('#txtApell').addEventListener('blur', valApell);
+        document.querySelector('#txtTel').addEventListener('blur', valTel);
+
+        // FUNCIONES DE VALIDACION
+        function valName() {
+            userName = document.querySelector('#txtName').value;
+            eRname = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
+            // /^[a-z0-9_-]{3,16}$/ Esta expresión regular valida los nombres de usuarios con letras minúsculas, números, guion bajo y guion medio. Los nombres de usuarios deben tener entre 3 y 16 caracteres.
+            if (eRname.test(userName) == true) {
+                document.querySelector('#txtName').disabled = true;
+            }
+            else {
+                alert('INVALIDO');
+                arrayDatos[3] = userName;
+            }
+        }
+        
+        function valApell() {
+            userApell = document.querySelector('#txtApell').value;
+            eRapell = /^[A-ZÑa-zñáéíóúÁÉÍÓÚ'° ]+$/;
+            // /^[a-z0-9_-]{3,16}$/ Esta expresión regular valida los nombres de usuarios con letras minúsculas, números, guion bajo y guion medio. Los nombres de usuarios deben tener entre 3 y 16 caracteres.
+            if (eRapell.test(userApell) == true) {
+                document.querySelector('#txtApell').disabled = true;
+                arrayDatos[4] = userApell;
+            }
+            else {
+                alert('INVALIDO');
+            }
+        }
+
+        function valTel(){
+            userTel = document.querySelector('#txtTel').value;
+            eRtel = /^[0-9]{9}$/;
+            if (eRtel.test(userTel) == true) { // COMPARA LA EXPRESION REGULAR CON LA VARIABLE PASADA
+                document.querySelector('#txtTel').disabled = true;
+                document.querySelector('#control').disabled = false;
+                arrayDatos[7] = userTel;
+            }
+            else {
+                document.querySelector('#txtTel').value= '';
+                alert('INVALIDO');
+            }
+        }
+    </script>
+    
+</body>
+</html>
